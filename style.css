@@ -1,0 +1,335 @@
+@import url('https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600&display=swap');
+
+:root {
+    --bg: #09090b;
+    --card: #18181b;
+    --card-hover: #27272a;
+    --primary: #8b5cf6;
+    --text: #f4f4f5;
+    --text-muted: #a1a1aa;
+    --border: #27272a;
+}
+
+body {
+    width: 360px;
+    height: 550px;
+    margin: 0;
+    padding: 0;
+    font-family: 'Outfit', sans-serif;
+    background: var(--bg);
+    color: var(--text);
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+}
+
+/* Utilities */
+.hidden {
+    display: none !important;
+}
+
+/* Header */
+header {
+    padding: 1rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-bottom: 1px solid var(--border);
+    background: rgba(24, 24, 27, 0.8);
+}
+
+.brand {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+.logo-icon {
+    padding: 6px;
+    background: linear-gradient(135deg, var(--primary), #6d28d9);
+    border-radius: 8px;
+    color: white;
+    display: flex;
+}
+
+h1 {
+    font-size: 1.2rem;
+    font-weight: 600;
+    margin: 0;
+    background: linear-gradient(to right, #fff, #a1a1aa);
+    background-clip: text;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+/* Main Content */
+main {
+    flex: 1;
+    overflow-y: auto;
+    padding: 1rem;
+}
+
+/* Buttons */
+.btn-icon,
+.btn-icon-small {
+    background: transparent;
+    border: none;
+    color: var(--text-muted);
+    cursor: pointer;
+    padding: 6px;
+    border-radius: 6px;
+    transition: 0.2s;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.btn-icon:hover {
+    background: var(--card-hover);
+    color: white;
+}
+
+.btn {
+    padding: 0.6rem 1rem;
+    border-radius: 8px;
+    border: 1px solid var(--border);
+    background: var(--card);
+    color: white;
+    cursor: pointer;
+    font-family: inherit;
+    font-weight: 500;
+    transition: 0.2s;
+}
+
+.btn-primary {
+    background: var(--primary);
+    border-color: var(--primary);
+}
+
+.btn:hover {
+    transform: translateY(-1px);
+    opacity: 0.9;
+}
+
+/* Inputs */
+input[type="text"],
+input[type="password"] {
+    width: 100%;
+    padding: 0.8rem;
+    background: var(--card-hover);
+    border: 1px solid var(--border);
+    border-radius: 8px;
+    color: white;
+    font-family: inherit;
+    box-sizing: border-box;
+    margin-top: 4px;
+}
+
+input:focus {
+    outline: none;
+    border-color: var(--primary);
+}
+
+/* Views */
+.search-bar {
+    position: relative;
+    margin-bottom: 1rem;
+}
+
+.search-icon {
+    position: absolute;
+    left: 10px;
+    top: 55%;
+    /* Centered vertically relative to input height including margin */
+    transform: translateY(-50%);
+    color: var(--text-muted);
+}
+
+#search-input {
+    padding-left: 2.5rem;
+}
+
+/* Password List Items */
+.password-item {
+    background: var(--card);
+    border: 1px solid var(--border);
+    padding: 1rem;
+    border-radius: 12px;
+    margin-bottom: 0.8rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    transition: 0.2s;
+}
+
+.password-item:hover {
+    border-color: var(--primary);
+}
+
+.site-info h3 {
+    margin: 0;
+    font-size: 1rem;
+}
+
+.site-info p {
+    margin: 0;
+    font-size: 0.85rem;
+    color: var(--text-muted);
+}
+
+.item-actions {
+    display: flex;
+    gap: 0.5rem;
+}
+
+.password-display {
+    width: 100%;
+    margin-top: 0.8rem;
+    padding: 0.8rem;
+    background: #000;
+    border-radius: 8px;
+    font-family: monospace;
+    font-size: 1rem;
+    color: var(--primary);
+    border: 1px solid var(--border);
+    animation: slideDown 0.2s ease-out;
+}
+
+@keyframes slideDown {
+    from {
+        opacity: 0;
+        transform: translateY(-5px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.password-item {
+    flex-wrap: wrap;
+}
+
+/* Forms */
+.form-group {
+    margin-bottom: 1rem;
+}
+
+.form-group label {
+    font-size: 0.85rem;
+    color: var(--text-muted);
+    text-transform: uppercase;
+    font-weight: 600;
+}
+
+.input-wrapper {
+    position: relative;
+    display: flex;
+    align-items: center;
+}
+
+.input-wrapper input {
+    margin-top: 0 !important;
+    padding-right: 2.5rem !important;
+}
+
+.input-wrapper .btn-icon-small {
+    position: absolute;
+    right: 8px;
+    color: var(--text-muted);
+    height: 100%;
+}
+
+.form-actions {
+    margin-top: 1.5rem;
+}
+
+.w-full {
+    width: 100%;
+}
+
+/* Generator */
+.generator-box {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}
+
+.gen-display {
+    background: #000;
+    padding: 1.5rem;
+    border-radius: 12px;
+    font-family: monospace;
+    font-size: 1.2rem;
+    text-align: center;
+    word-break: break-all;
+    border: 1px solid var(--border);
+    color: var(--primary);
+}
+
+.gen-controls {
+    display: flex;
+    gap: 1rem;
+}
+
+.gen-controls button {
+    flex: 1;
+}
+
+.range-group {
+    margin-top: 1rem;
+    background: var(--card);
+    padding: 1rem;
+    border-radius: 8px;
+}
+
+/* Auth & Settings */
+.auth-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 100%;
+    padding: 2rem;
+    text-align: center;
+}
+
+.auth-header {
+    margin-bottom: 2rem;
+}
+
+.logo-large {
+    color: var(--primary);
+    margin-bottom: 1rem;
+    display: flex;
+    justify-content: center;
+}
+
+#auth-title {
+    font-size: 1.5rem;
+    margin-bottom: 0.5rem;
+}
+
+#auth-desc {
+    color: var(--text-muted);
+    font-size: 0.9rem;
+}
+
+.w-full {
+    width: 100%;
+}
+
+.settings-section {
+    background: var(--card);
+    padding: 1rem;
+    border-radius: 12px;
+    border: 1px solid var(--border);
+}
+
+.settings-section h3 {
+    margin-top: 0;
+    font-size: 1rem;
+    margin-bottom: 1rem;
+    color: var(--primary);
+}
